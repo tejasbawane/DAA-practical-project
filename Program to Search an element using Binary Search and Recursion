@@ -1,0 +1,60 @@
+#include < stdio.h›
+#include "Program912a.c"
+void main() {
+int a[20], n, key, flag;
+printf("Enter value of n : ");
+scanf("%d", &n);
+readi(a, n);
+bubbleSort(a, n);
+printf("After sorting the elements are : ");
+display(a, n);
+printf("Enter key element : ");
+scanf("%d", &key);
+flag = binarySearcha, 0, n - 1, key);
+i f ( fl a g == -1) {
+printf("The given key element %d is not found\n", key);
+} e l s e {
+printf("The given key element %d is found at position : %d\n", key, flag);
+}
+
+#include ‹stdio.h›
+void readi(int all, int n){
+printf("Enter %d elements : ",n);
+for (int i=0; i<n; i++){
+scanf("%d", &a[i]);
+}
+}
+void bubblesort(int all, int n){
+for (int i=0; i<n-1; i++){
+for (int j=0; j<n-i-1; j++){
+if (aljl › a[j+1]){
+int temp = a[j];
+a[j] = a[j+1];
+a[j+1] = temp;
+}
+}
+}
+24070521147 Page No: 1
+9
+SE
+Symbiosis Institute of Technology | SIT Nagpur
+}
+void display(int all, int n){
+for ( i n t i=0; i<n; i++){
+printf("%d", a[il);
+}
+printf("\n");
+}
+int binarySearch(int al], int left, int right, int key){
+if (left <= right){
+i n t mid = l e f t + (right - left)/2;
+if (a[mid] == key){
+r e t u r n mid;
+}
+if (a[mid] › key){
+return binarySearcha, left, mid-1, key);
+}
+return binarySearcha, mid+1, right, key);
+}
+return -1;
+}
