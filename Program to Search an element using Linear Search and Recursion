@@ -1,0 +1,16 @@
+#include ‹stdio.h›
+#include "Program911a.c
+void main() {
+int a[20], n, pos, key;
+printf("Enter n value : ");
+scanf ("%d", &n);
+readi(a, n);
+printf("Enter a key element : ");
+scanf ("%d", &key);
+pos = l i n e a r S e a r c h a , 0, n - 1, key);
+if (pos == - 1) {
+printf("The key element %d is not found\n", key);
+e l s e {
+printf("The key element %d is found at position : %d\n", key, pos);
+}
+}
