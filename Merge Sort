@@ -1,0 +1,76 @@
+#include ‹stdio.h›
+#include ‹stdlib.h›
+void merge(int arr[], int low, int mid, int high){
+int n1 = mid - low + 1;
+int n2 = high - mid;
+int *a1 = (int *)malloc(n1 * sizeof(int));
+int *a2 = (int *)malloc(n2 * sizeof(int));
+for (int i=0; i<n1; i++){
+a1[i] = arr[low+i];
+}for (int j=0; j<n2; j++){
+a z ［ j ］ = a r r ［ m i d + 1 + j ］ ；
+}
+int i=o, j=0, k=low;
+while(i<n1 & j<n2){
+if(a1[i]<=a2[j]){
+arr[k] = a1[i];
+i++;
+Jelset
+arr[k] = a2[j];
+j+t;
+}
+k++;
+}
+while(i<n1){
+arr[k] = a1[i];
+i++;
+k++;
+}
+while(j<n2){
+arr[k]=a2[j];
+j++;
+k++;
+}
+free(al);
+free (a2);
+ID: 24070521147
+Page No: 1
+}
+Symbiosis Institute of Technology | SIT Nagpur 2024-28-CSE-C
+void printPass(int arr[], int left, int right){
+printf("Pass: ");
+for (int p = left;p<=right ; p++){
+printf("%d ,arr [p]);
+}
+printf("\n");
+}
+void mergeSort(int arr[], int left, int right){
+if(left<right){
+int mid = l e f t + ( r i g h t - l e f t ) / 2 ;
+mergeSort(arr, left,mid);
+mergeSort(arr,mid+1, right);
+merge (arr, left, mid, right);
+printPass(arr, left, right);
+}
+}
+void printArray(int arr[], int size){
+f o r ( i n t i = 0 ; i ‹ size;i++){
+printf("%d " ,arr[i]);
+}
+printf("\n");
+}
+int main(){
+int n;
+printf("no of elements: ");
+scanf ("%d", &n) ;
+int arr[n];
+printf("elements: ");
+for (int i = 0;i<n;i++){
+scanf("%d ",&arr[i]);
+}
+printf("Given array:\n");
+p r i n t A r r a y ( a r r, n ) ;
+mergeSort(arr,0,n-1);
+printf("Sorted array: \n");
+printArray (arr,n);
+}
